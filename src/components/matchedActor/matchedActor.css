@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&display=swap');
+
+.matchedActorsWrapper{
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    width: 90%;
+    background-color: #060050;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.matchedActorsWrapper h5{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.matchedActorInfoWrapper{
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex: 1 1 1 auto;
+    flex-direction: row;
+    margin-bottom: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+.actorPhotoWrapper{
+    width: 39%;
+    display: flex;
+    justify-content: center;
+}
+
+.actorPhoto{
+    width: 80px;
+    aspect-ratio: 10/15;
+    border-radius: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.actorInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 30%;
+}
+
+.actorInfo h5{
+    margin: 0;
+    font-weight: bold;    
+    font-size: 18px;
+}
+
+
+#character{
+    color: rgb(168, 168, 168);
+    font-weight: lighter;   
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    line-height: 20px;
+}
