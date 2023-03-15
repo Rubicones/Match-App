@@ -7,10 +7,10 @@ const MatchedActor = (props) => {
             <div className="matchedActorInfoWrapper">
                 <div className="actorInfo">
                     <h5 id='name'>Character</h5>
-                    <h5 id='character'>{props.characterLeft}</h5>
+                    <h5 id='character'>{props.characterLeft.length > 50 ? props.characterLeft.slice(0, 50) + "..." : props.characterLeft}</h5>
                 </div>
                 <div className="actorPhotoWrapper">
-                    <div className="actorPhoto" style={{backgroundImage: "url(" + props.portraitUrl + ")"}}/>
+                    <img className="actorPhoto" src={props.portraitUrl}/>
                 </div>
                 <div className="actorInfo">
                     <h5 id='name'>Character</h5>

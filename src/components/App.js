@@ -71,25 +71,43 @@ class App extends Component {
 
     return (
       <>
-      <header>
-        <h1 id='Title' style={{marginBottom: 0, marginTop: 0}}>Match!</h1>
-        <h5 style={{marginBottom: "30px", color: "rgba(255, 255, 255, 0.583)", marginTop: 0}}>Find intersection of actors in your favorite films</h5>
-      </header>
-      <div className="main">
-        <div className="movieBlock" data-side="left">
-          <Movie setActors={(crewListPromise) => this.setActors(crewListPromise, "left")} onMovieSelect={this.onMovieSelect} />
+        <header>
+          <h1 id='title' style={{marginBottom: 0, marginTop: 0}}>Match!</h1>
+          <h5 id="subtitle" style={{marginBottom: "30px", color: "rgba(255, 255, 255, 0.583)", marginTop: 0}}>Find intersection of actors in your favorite films</h5>
+        </header>
+        
+        <div className="main">
+          <div className="container-fluid">
+          <div className="row">
+            <div className="col-xl-4">
+              <div className="movieBlock" data-side="left">
+                <Movie setActors={(crewListPromise) => this.setActors(crewListPromise, "left")} onMovieSelect={this.onMovieSelect} />
+              </div>
+            </div>
+          
+          {
+            isDiffed ? 
+              <div className="col-xl-4">
+                <div className="actorsMatched">
+                    {actors}
+                </div> 
+              </div>
+            :
+            <div className="col-xl-4" >
+              <div className="mainMessageContainer">
+                <h1 className='mainMessage'>These movies don't have intersection</h1>
+              </div>
+            </div>
+          }
+              <div className="col-xl-4">
+                <div className="movieBlock" data-side="right">
+                  <Movie setActors={(crewListPromise) => this.setActors(crewListPromise, "right")} onMovieSelect={this.onMovieSelect} />
+                </div>
+              </div>
+          </div>
+          </div>
         </div>
-        {
-          isDiffed ? 
-          <div className="actorsMatched">
-              {actors}
-          </div> :
-          <h1 className='mainMessage'>These movies don't have intersection</h1>
-        }
-        <div className="movieBlock" data-side="right">
-          <Movie setActors={(crewListPromise) => this.setActors(crewListPromise, "right")} onMovieSelect={this.onMovieSelect} />
-        </div>
-      </div>
+
       </>
     );
   }

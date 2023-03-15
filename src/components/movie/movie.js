@@ -60,7 +60,7 @@ class Movie extends Component {
     }
 
     setMovie = (posterUrl, movieTitle) => {
-        let posterUrlString = "url(" + posterUrl + ")"
+        let posterUrlString = "" + posterUrl + ""
         this.setState({
             posterPath: posterUrlString,
             movieTitle: movieTitle,
@@ -115,16 +115,11 @@ class Movie extends Component {
         let isSearchActiveClass = isSearchActive ? " active" : ""
         const setPosterStyle = {
             backgroundImage: posterPath,
-            border: 0,
-            borderRadius: "10px"
         }
-        // if (movieTitle && !isMovieSelected){
-        //     this.setState({isMovieSelected: true})
-        //     this.props.onMovieSelect()
-        // }
+
         return (
             <div className="movieWrapper">
-                <div className="container">
+                <div className="movieContainer">
                     <div className={"searchInput" + isSearchActiveClass}>
                         <input 
                         type="text" 
@@ -138,7 +133,7 @@ class Movie extends Component {
                     </div>
                 </div>
                 <div className="movieCoverWrapper">
-                    <div className="movieCover" style={setPosterStyle}></div>
+                    <img src={posterPath} style={setPosterStyle}/>
                 </div>
                 <h3>{movieTitle}</h3>
             </div>

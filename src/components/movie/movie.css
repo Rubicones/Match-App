@@ -3,42 +3,52 @@
 
 .movieWrapper{
     background-color: #42a7f416;
-    height: 600px;
-    width: 400px;
+    min-height: 42vw;
     box-sizing: border-box;
     color: white;
     display: flex;
     flex-direction: column;
-    border-radius: 30px;
+    border-radius: 3.3vw;
     justify-content: space-between;
     align-items: center;
+    margin: 0 2vw 0 2vw;
 }
 
 .movieWrapper h3{
   margin: 0;
   font-family: 'Baloo Bhaijaan 2', cursive;
-  font-size: 30px;
+  font-size: 2vw;
   text-align: center;
-  line-height: 30px;
   margin-bottom: 10px;
 }
 
+/* #080055 */
 .search{
     width: auto;
-    height: 30px;
-    margin-top: 20px;
-    border-radius: 12px;
+    height: 2vw;
+    margin-top: 2vw;
+    border-radius: 2vw;
     background-color: #42a7f4b1;
     border: none;
 }
 
+.movieCoverWrapper{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 2vw 0 2vw;
+  display: flex;
+  justify-content: center;
+}
+
 .movieCover{
-    width: 300px;
-    height: 450px;
+    width: 10vw;
+    height: 10vh;
     border: 2px solid #42a7f4;
     color: #42a7f4;
     text-align: center;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /* Here starts search styling */
@@ -48,11 +58,12 @@
   background: #664AFF;
 }
 
-.container{
-    width: 300px;
+
+.movieContainer{
+    width: 80%;
 }
 
-.container .searchInput{
+.movieContainer .searchInput{
   width: 100%;
   border-radius: 5px;
   position: relative;
@@ -62,13 +73,13 @@
 
 .searchInput input{
   font-family: 'Baloo Bhaijaan 2', cursive;
-  height: 40px;
+  height: 3vw;
   width: inherit;
   outline: none;
   border: none;
-  border-radius: 10px;
-  margin-top: 20px;
-  font-size: 18px;
+  border-radius: 0.5vw;
+  margin-top: 2vw;
+  font-size: 1vw;
   box-sizing: border-box;
   box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
   color: white;
@@ -83,10 +94,10 @@ input::placeholder{
 .searchInput .resultBox{
   padding: 0;
   opacity: 0;
-  max-height: 280px;
+  max-height: 20vw;
   overflow-y: auto;
-  width: 304px;
-
+  width: 100%;
+  margin-bottom: 2vw;
 }
 
 .searchInput.active .resultBox{
@@ -94,43 +105,114 @@ input::placeholder{
   width: 100%;
 }
 
+
 .resultBox li{
   list-style: none;
-  padding: 8px 12px;
+  padding: 8px 1vw;
   display: none;
   cursor: default;
-  border-radius: 10px;
   color: #fff;
-  padding-left: 30px;
-  padding-right: 30px;
-  background-color: #716e9fe7;
-  border-bottom: 3px solid #4b496d;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  background-color: #080055d1;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  z-index: 103;
+}
+
+.resultBox :first-child{
+  border-top-left-radius: 0.5vw;
+  border-top-right-radius: 0.5vw;
+}
+
+.resultBox{
+  border-bottom-left-radius: 0.5vw;
+  border-bottom-right-radius: 0.5vw;
+  border-bottom: 2px solid white;
 }
 
 .searchInput.active .resultBox li{
   display: block;
+  font-size: 1vw;
+  z-index: 102;
+
 }
 
 .resultBox{
     position:absolute;
     font-family: 'Baloo Bhaijaan 2', cursive;
+    z-index: 100;
 
 }
 
 .resultBox li:hover{
   box-sizing: content-box;
-  background-color: #64618e;
+  background-color: #070145d1;
+  z-index: 101;
+
 }
 
 .searchInput .icon{
   position: absolute;
   right: 0px;
   top: 0px;
-  height: 55px;
   width: 55px;
   text-align: center;
   line-height: 55px;
   font-size: 20px;
   color: #ffffff;
   cursor: pointer;
+}
+
+.movieCoverWrapper img{
+  max-width: 80%;
+  max-height: 80%;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1400px) {
+  .movieWrapper h3{
+    font-size: 20px;
+  }
+
+  .movieWrapper{
+    background-color: #42a7f416;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 40px;
+  }
+
+  .searchInput .resultBox{
+    max-height: 200px;
+  }
+
+  .searchInput input{
+    height: 30px;
+    width: inherit;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+  .searchInput.active .resultBox li{
+    display: block;
+    font-size: 15px;
+    z-index: 102;  
+  }
+
+  .movieCoverWrapper{
+    height: 70%;
+    display: block;
+    text-align: center;
+  }
+  .movieCoverWrapper img{
+    width: 100%;
+    z-index: 1;
+    max-height: 100%;
+    object-fit: contain;
+  } 
+
 }
